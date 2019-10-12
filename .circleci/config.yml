@@ -54,7 +54,7 @@ jobs:
             set -x
             gcloud container clusters get-credentials ${WORKSHOP_CLUSTER} --zone ${WORKSHOP_CLUSTER_ZONE} --project ${WORKSHOP_GCP_PROJECT}
             kubectl config current-context
-            service=rasmus-nodejs-docker-webapp
+            service=sami-kube-maat
             namespace=workshop
             if kubectl get service ${service}-lb -n ${namespace} > /dev/null; then
               kubectl delete service ${service}-lb -n ${namespace};
